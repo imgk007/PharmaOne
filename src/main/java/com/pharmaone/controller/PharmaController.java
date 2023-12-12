@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PharmaController {
-@GetMapping("/hello")
-public String show() {
-       return "It Works!!!";
-       }
+       @GetMapping("/hello")
+       public String show() {
+              return "It Works!!!";
+              }
 }
