@@ -1,22 +1,23 @@
 package com.pharmaone.repository;
 
-import org.apache.catalina.User;
+
+import com.pharmaone.model.UserAccess;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepository {
-    private List<User> userList;
+    private List<UserAccess> userList;
 
-    public List<User> getUsers() {
+    public List<UserAccess> getUsers() {
         System.out.println(userList);
         return userList;
     }
 
-    public User getSpecificUser(int userId) {
-       return new User("tmp","tmp","customer");
+    public UserAccess getSpecificUser(int userId) {
+       return new UserAccess("tmp","tmp","customer");
     }
-    public void addUser(User user) {
+    public void addUser(UserAccess user) {
         userList.add(user);
     }
 
