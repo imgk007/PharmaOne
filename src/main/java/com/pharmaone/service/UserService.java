@@ -5,14 +5,26 @@ import com.pharmaone.repository.UserRepository;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
 public class UserService {
-    private UserRepository repository;
+    private List<UserAccess> userList= Arrays.asList(new UserAccess("admin","admin","admin"));
 
-    public List<UserAccess> getUsers() {return repository.getUsers();}
-    public UserAccess getSpecificUser(int userId) {return repository.getSpecificUser(userId);}
-    public String validateUser(String userName,String password) {return repository.validateUser(userName,password);}
-    public void addUser(UserAccess user) {repository.addUser(user);}
+    public List<UserAccess> getUsers() {
+
+        return userList;
+    }
+
+    public UserAccess getSpecificUser(int userId) {
+        return new UserAccess("tmp","tmp","customer");
+    }
+    public void addUser(UserAccess user) {
+        userList.add(user);
+    }
+
+    public String validateUser(String userName, String password) {
+        return "Valid";
+    }
 }
