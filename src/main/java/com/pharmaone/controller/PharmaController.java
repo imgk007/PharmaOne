@@ -3,10 +3,7 @@ package com.pharmaone.controller;
 import com.pharmaone.model.UserAccess;
 import com.pharmaone.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -23,5 +20,8 @@ public class PharmaController {
               }
        @GetMapping("/allusers")
        public List<UserAccess> getAll() {return service.getUsers();}
+
+       @GetMapping("/1")
+       public UserAccess getSpecificUser() {return service.getSpecificUser(1);}
 
 }
